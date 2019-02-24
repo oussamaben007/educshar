@@ -37,12 +37,11 @@ public class ConfigSecurity extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests().antMatchers("/login/**","/SaveStudentWithAvatar/**",
 			       "/SaveStudentWithoutAvatar/**","/SaveProfessorWithAvatar/**",
 			       "/SaveProfessorWithoutAvatar/**","/profil/**", "/getUserById/**" ,
-			       "/profilWithAvatar/**/edit" , "/profilWithoutAvatar/**/edit", "/messages/**" ,
-			       "/documents/**", "/favoris/**","/search-documents").permitAll();
+			       "/profilWithAvatar/**/edit" , "/profilWithoutAvatar/**/edit", "/messages/**", "/matters/**"  ).permitAll();
 		http.authorizeRequests().antMatchers("/appUsers/**","/appRoles/**").hasAuthority("ADMIN");
-		http.authorizeRequests().antMatchers("/courses/**","/departments/**" , "/universities/**" , "/users/**" , "/matters/**" ).hasAuthority("ADMIN");
+		http.authorizeRequests().antMatchers("/courses/**","/departments/**" , "/universities/**" , "/users/**" ).hasAuthority("ADMIN");
 		// else verrouiller tout le reste
-		http.authorizeRequests().anyRequest().authenticated();
+	//	http.authorizeRequests().anyRequest().authenticated();
 		
         http.addFilter(new JWTAuthenticationFilter(authenticationManager()));    
         
@@ -50,7 +49,7 @@ public class ConfigSecurity extends WebSecurityConfigurerAdapter {
           
 	}
 	
-	
+	//,"/documents/**", "/favoris/**","/search-documents"
 	@Bean
 	public BCryptPasswordEncoder getBCPE() {
 		return new BCryptPasswordEncoder();

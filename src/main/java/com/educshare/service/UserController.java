@@ -1,4 +1,4 @@
-package com.educshare.web;
+package com.educshare.service;
 
 import java.io.IOException;
 import java.util.Date;
@@ -20,7 +20,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.educshare.entities.AppUser;
 import com.educshare.reposistory.AppUserRepository;
-import com.educshare.service.AccountService;
+import com.educshare.web.Response;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -30,7 +30,7 @@ import lombok.Data;
 @RestController
 public class UserController {
 	
-	@Autowired
+	
 	private AccountService accountService;
 
 	@Autowired
