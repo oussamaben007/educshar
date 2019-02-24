@@ -57,10 +57,9 @@
 		</dependency>
 		
 		<dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<version>9.4-1201-jdbc4</version>
-		</dependency>
+             <groupId>org.postgresql</groupId>
+             <artifactId>postgresql</artifactId>
+         </dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.auth0/java-jwt -->
 		<dependency>
