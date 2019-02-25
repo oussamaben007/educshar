@@ -23,13 +23,13 @@ public class AccountServiceImp implements AccountService {
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 
-	public AccountServiceImp(AppUserRepository appUserRepository, AppRoleRepository appRoleRepository,
-			BCryptPasswordEncoder bCryptPasswordEncoder) {
-		super();
-		this.appUserRepository = appUserRepository;
-		this.appRoleRepository = appRoleRepository;
-		this.bCryptPasswordEncoder = bCryptPasswordEncoder;
-	}
+//	public AccountServiceImp(AppUserRepository appUserRepository, AppRoleRepository appRoleRepository,
+//			BCryptPasswordEncoder bCryptPasswordEncoder) {
+//		super();
+//		this.appUserRepository = appUserRepository;
+//		this.appRoleRepository = appRoleRepository;
+//		this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+//	}
 	
 	@Override
 	public AppRole save(AppRole role) {
