@@ -16,7 +16,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity // activer la security Web
 public class ConfigSecurity extends WebSecurityConfigurerAdapter {
 
-	//@Autowired
+	@Autowired
 	private UserDetailsServiceImpl userDetailsService; // c'est un interface pour apple la methode configure
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -37,11 +37,11 @@ public class ConfigSecurity extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests().antMatchers("/login/**","/SaveStudentWithAvatar/**",
 			       "/SaveStudentWithoutAvatar/**","/SaveProfessorWithAvatar/**",
 			       "/SaveProfessorWithoutAvatar/**","/profil/**", "/getUserById/**" ,
-			       "/profilWithAvatar/**/edit" , "/profilWithoutAvatar/**/edit", "/messages/**", "/matters/**"  ).permitAll();
+			       "/profilWithAvatar/**/edit/**" , "/profilWithoutAvatar/**/edit/**", "/messages/**", "/matters/**").permitAll();
 		http.authorizeRequests().antMatchers("/appUsers/**","/appRoles/**").hasAuthority("ADMIN");
 		http.authorizeRequests().antMatchers("/courses/**","/departments/**" , "/universities/**" , "/users/**" ).hasAuthority("ADMIN");
 		// else verrouiller tout le reste
-	//	http.authorizeRequests().anyRequest().authenticated();
+		//http.authorizeRequests().anyRequest().authenticated();
 		
         http.addFilter(new JWTAuthenticationFilter(authenticationManager()));    
         
