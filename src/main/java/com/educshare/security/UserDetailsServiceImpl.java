@@ -19,7 +19,7 @@ import com.educshare.service.AccountService;
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 
-	@Autowired
+	//@Autowired
 	private AccountService accountService;
 
 	@Override

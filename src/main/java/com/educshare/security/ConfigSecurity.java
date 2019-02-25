@@ -16,7 +16,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity // activer la security Web
 public class ConfigSecurity extends WebSecurityConfigurerAdapter {
 
-	@Autowired
+	//@Autowired
 	private UserDetailsServiceImpl userDetailsService; // c'est un interface pour apple la methode configure
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
